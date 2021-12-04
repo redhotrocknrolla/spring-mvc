@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+    <style>
+        table th, table td {padding: 5px;}
+        .row  {
+            font-style: italic;
+        }
+        .even-row {
+            color: black;
+        }
+        .odd-row {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<h1>th:each</h1>
+<table border="1">
+    <tr>
+        <th>Car</th>
+        <th>Model</th>
+        <th>Year</th>
+    </tr>
+
+    <tr th:each="car : ${count}">
+        <td th:utext="${car.car}"></td>
+        <td th:utext="${car.model}"></td>
+        <td th:utext="${car.year}">Year</td>
+    </tr>
+</table>
+</body>
+</html>
