@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class CarsController {
 
     @GetMapping(value = "/cars")
-    public String printCars(Model model,@RequestParam(defaultValue = "5")int count) {
+    public String printCars(Model model,@RequestParam(defaultValue = "5")int cars) {
         Service service = new Service();
-        model.addAttribute("count",service.getAllCar(count));
+        model.addAttribute("cars",service.getAllCar(cars));
         return "cars";
     }
 }

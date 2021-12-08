@@ -1,23 +1,17 @@
 package model;
 
-import java.util.ArrayList;
+import dao.CarDao;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Service {
-    private List<Car> listCar = new ArrayList<>();
+public class Service implements CarServiceInt{
 
-    {
-        listCar.add(new Car("ZAZ", "FOO", 1969));
-        listCar.add(new Car("UAZ", "Patriot", 1999));
-        listCar.add(new Car("VAZ", "Shaha", 1988));
-        listCar.add(new Car("ZIL", "Torpedo", 1957));
-        listCar.add(new Car("Gagarin", "FirstInSpace", 1961));
-
+    @Override
+    public List<Car> addCar() {
+        CarDao carDao = new CarDao();
+        return carDao.addCar();
     }
-    public List<Car> getAllCar(int count){
-
-        return listCar.stream().limit(count).collect(Collectors.toList());
+    public List<Car> getAllCar(int car) {
+        return addCar().stream().limit(car).collect(Collectors.toList());
     }
-
 }
