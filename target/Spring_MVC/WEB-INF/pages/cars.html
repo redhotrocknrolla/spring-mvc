@@ -25,9 +25,9 @@
         <th>Year</th>
     </tr>
 
-    <tr th:each="car : ${count}">
-        <td th:utext="${car.car}"></td>
-        <td th:utext="${car.model}"></td>
+    <tr th:each="car : ${cars}">
+        <td th:utext="${car.car}">Car</td>
+        <td th:utext="${car.model}">Model</td>
         <td th:utext="${car.year}">Year</td>
     </tr>
 </table>
