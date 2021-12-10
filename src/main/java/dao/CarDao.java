@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface CarDao {
 
-    public List<Car> addCar();
+    List<Car> addCar(int car);
 }

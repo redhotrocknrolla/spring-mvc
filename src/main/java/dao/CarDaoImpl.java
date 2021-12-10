@@ -1,17 +1,18 @@
 package dao;
 
 import model.Car;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
+@Repository
 public class CarDaoImpl implements CarDao{
 
-
-    @Override
-    public List <Car> addCar() {
-         List<Car> listCar = new ArrayList<>();
+        @Autowired
+         private List<Car> listCar = new ArrayList<>();
 
         {
             listCar.add(new Car("ZAZ", "FOO", 1969));
@@ -21,7 +22,9 @@ public class CarDaoImpl implements CarDao{
             listCar.add(new Car("Gagarin", "FirstInSpace", 1961));
 
         }
-        return listCar;
-    }
 
+    @Override
+    public List<Car> addCar(int car) {
+        return listCar.stream().limit(car).collect(Collectors.toList());
+    }
 }
