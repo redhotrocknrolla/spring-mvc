@@ -10,8 +10,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class CarsController {
+    private final CarService carService;
+
     @Autowired
-    private CarService carService;
+    public CarsController(CarService carService) {
+        this.carService = carService;
+    }
 
 
     @GetMapping(value = "/cars")
