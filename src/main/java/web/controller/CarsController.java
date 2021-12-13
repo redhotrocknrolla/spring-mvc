@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
-@ComponentScan({"service"})
 public class CarsController {
     private final CarService carService;
 
